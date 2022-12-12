@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){"use strict";return e.extend("Jepco.ISU.DM.smartmeter.controller.App",{onInit:function(){sap.ui.getCore().getConfiguration().setLanguage("ar");var e=sap.ui.core.UIComponent.getRouterFor(this);e.navTo("Login")}})});

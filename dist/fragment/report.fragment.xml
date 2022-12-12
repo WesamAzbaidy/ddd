@@ -1,0 +1,56 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+    controllerName="sap.m.sample.StandardListItemIcon.List"
+	xmlns:mvc="sap.ui.core.mvc"
+ 
+>
+ 	<List
+		id="ReportList"
+		headerText="التقارير"
+		items=" test1 ">
+		<items>
+			<StandardListItem
+                id="StandardRepID"
+                type="Navigation"  
+                press="onStandardReportPress"
+				title="تقرير الجولات منجز / غير منجز"
+				description="View / Excel"
+				icon="sap-icon://complete"
+				iconDensityAware="false"
+				iconInset="false" 
+                />
+			<StandardListItem
+                id="newMeterRepID"
+                type="Navigation"  
+                press="onNewMeterReportPress"
+				title="تقرير بالعدادات الجديده / قبل الموافقة"
+				description="View / Excel"
+				icon="sap-icon://approvals"
+				iconDensityAware="false"
+				iconInset="false" 
+                />
+			<StandardListItem
+                id="BuildingRepID"
+                type="Navigation"  
+                press="onBuildingReportPress"
+				title="تقرير عناوين المباني والعدادات"
+				description="View / Excel"
+				icon="sap-icon://building"
+				iconDensityAware="false"
+				iconInset="false" 
+                />
+			<!-- <StandardListItem
+                id="BuildingRepID2"
+                type="Navigation"  
+                press="onReplacementReportPress"
+				title="نقرير معلومات تبديل العدادات"
+				description="View / Excel"
+				icon="sap-icon://share"
+				iconDensityAware="false"
+				iconInset="false" 
+                />				 -->
+		</items>
+	</List>
+
+</c:FragmentDefinition>

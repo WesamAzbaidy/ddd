@@ -1,0 +1,114 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" 
+						 xmlns="sap.m" 
+						 xmlns:l="sap.ui.layout"
+						 xmlns:f="sap.ui.layout.form" > 
+
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormChange354wideDual"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="تعين جولة"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<!-- <core:Title text="تعين جولة" /> -->
+				<Label text="اسم المستخدم للفرقة" labelFor="teamName"/>
+				<Select
+					id="teamName" width="420px"
+					columnRatio="1:3"
+					showSecondaryValues= "true"
+					items="{ path: 'userModel>/items' }">
+					<core:ListItem text="{userModel>firstColumnText}" additionalText="{userModel>secondColumnText}"/>
+				</Select>
+				 
+				<Label text="الجولة" labelFor="teamRound" />
+				 <Input id = "teamRound"  width="420px" />
+
+      <Label text=""/>
+       
+			<HBox>
+				<Button text="حفظ"  width="85px" press="onSaveRound"
+						ariaDescribedBy="defaultButtonDescription genericButtonDescription">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Button>
+				<Button type="Accept"  width="85px" press = "onQueryRound"
+						text="استعلام" 
+						ariaDescribedBy="acceptButtonDescription genericButtonDescription">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Button>
+				<Button type="Reject"  width="85px" press="onDeleteRound"
+						text="حــذف" 
+						ariaDescribedBy="rejectButtonDescription genericButtonDescription">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Button>
+				<Button    width="85px" press="onShowAll"
+						text="عرض الجميع" 
+						ariaDescribedBy="rejectButtonDescription genericButtonDescription">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Button>
+			</HBox>
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+   	<Table id="idTableRound"
+		items="{
+			path: '/d/results',
+			sorter: {
+				path: 'Name'
+			}
+		}">
+		<headerToolbar>
+			<OverflowToolbar>
+				<Title text="الجولات" level="H2"/>
+				<ToolbarSpacer/>
+			</OverflowToolbar>
+		</headerToolbar>
+
+		<columns>
+			<Column>
+				<Text text="الفرقة الفنية" />
+			</Column>
+			<Column>
+				<Text text="الجولة" />
+			</Column> 
+         <Column>
+				<Text text="عدد العدادات" />
+			</Column> 
+         <Column>
+				<Text text="تم التبديل" />
+			</Column> 
+
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle" type="Navigation">
+				<cells>
+					<Text text="{geraet}" wrapping="false" />
+					<Text text="{customeName}" wrapping="false"/>
+                    <Text text="{duplicateAddr}" wrapping="false"/>
+                    <Text text="{lequnr}" wrapping="false"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+ 
+ 
+ </core:FragmentDefinition>

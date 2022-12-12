@@ -1,0 +1,59 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" 
+						 xmlns="sap.m" 
+						 xmlns:l="sap.ui.layout"
+						 xmlns:f="sap.ui.layout.form" > 
+
+
+   <Table id="idTechnicalNotes" class="sapUiResponsiveMargin" growing="true" growingThreshold="10" width="auto" items="{path:'/',                parameters: {          $count: true         }}">
+      <headerToolbar>
+         <OverflowToolbar>
+            <content>
+               <ToolbarSpacer />
+               <Button  text ="تحديث" icon="sap-icon://refresh" tooltip="{i18n&gt;refreshButtonText}" press="onRefresh" />
+               <Button   text="ترتيب حسب اسم الفني "  icon="sap-icon://sort" tooltip="{i18n&gt;sortButtonText}" press="onSortUi5User" />
+                <Button   text="ترتيب حسب التاريخ"  icon="sap-icon://sort" tooltip="{i18n&gt;sortButtonText}" press="onSortByDate" />
+            </content>
+         </OverflowToolbar>
+      </headerToolbar>
+      <columns>
+     
+         <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text="رقم العداد " width="" />
+         </Column>
+         <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text=" نوع الملاحظة  " width="" />
+         </Column>
+             <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text="اسم الفني" width="" />
+         </Column>
+         <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text="الملاحظة " width="" />
+         </Column>
+         <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text="الصورة" width="" hAlign="Center" />
+         </Column>
+           <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text="التاريخ" width="" hAlign="Center" />
+         </Column>
+      </columns>
+      <items>
+         <ColumnListItem>
+            <cells>
+               <Text text="{meterNumber}" />
+               <Text text="{tarifDesc}" />
+               <Text text="{ui5User}" />
+               <Text text="{notes}" />
+                <Button text="مشاهده"  press="onNotePicPress" >  </Button> 
+			    <!-- <FlexBox justifyContent="SpaceAround" width="100%">
+             <Image press="onEnterItems" height="150px" width="150px" src="data:image/{image}" />
+                </FlexBox> -->
+
+               <Text text="{createdDate}" />
+              
+            </cells>
+         </ColumnListItem>
+      </items>
+   </Table>
+
+
+ </core:FragmentDefinition>

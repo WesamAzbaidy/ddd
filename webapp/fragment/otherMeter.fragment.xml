@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+   <Table id="idTableOtherMeter" class="sapUiResponsiveMargin" growing="true" growingThreshold="10" width="auto" items="{path:'/',                parameters: {          $count: true         }}">
+      <headerToolbar>
+         <OverflowToolbar>
+            <content>
+                      <FlexBox justifyContent="End" alignItems="Center" class="sapUiTinyMarginTop">                      
+                        <Input width ="150px"
+                           class="sapUiSmallMarginBottom"
+                           type="Text"
+                           showValueHelp="true"
+                           valueHelpIconSrc="sap-icon://search"
+                           valueHelpRequest="onSearchMeter"
+                           press="onSearchMeter" submit="onSearchMeter"
+                           id="searchOldMeterAll"  placeholder="العداد القديم">
+                           <layoutData>
+                              <FlexItemData growFactor="0.5" />
+                           </layoutData>
+                        </Input>
+                        <Input width ="150px" 
+                           class="sapUiSmallMarginBottom"
+                           type="Number"
+                           showValueHelp="true"
+                           valueHelpIconSrc="sap-icon://search"
+                           valueHelpRequest="onSearchMeter" 
+                           press="onSearchMeter" submit="onSearchMeter"
+                           id="searchNewMeterAll"  placeholder=" العداد الجديد">
+                           <layoutData>
+                              <FlexItemData growFactor="0.5" />
+                           </layoutData>
+                        </Input>
+                     </FlexBox>
+               <ToolbarSpacer />   <ToolbarSpacer />
+               <Button text = "تحديث"  icon="sap-icon://refresh" tooltip="{i18n&gt;refreshButtonText}" press="onRefresh" />
+               <Button text = "اسم الفني "  icon="sap-icon://sort" tooltip="{i18n&gt;sortButtonText}" press="onSortUser" />
+               <Button text = "الحالة" icon="sap-icon://sort" tooltip="{i18n&gt;sortButtonText}" press="onSort" />
+             
+               <Button text = "وقت الانشاء "  icon="sap-icon://sort" tooltip="{i18n&gt;sortButtonText}" press="onCreatedDate" />
+               <Button text = "وقت القراءة"  icon="sap-icon://sort" tooltip="{i18n&gt;sortButtonText}" press="onscanDate" />
+
+            </content>
+         </OverflowToolbar>
+      </headerToolbar>
+      <columns>
+         <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text="اسم الفني" width="" />
+         </Column>
+         <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text="الجولة" width="" />
+         </Column>
+         <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text="العداد القديم" width="" />
+         </Column>
+         <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text="قراءة العداد  " width="" />
+         </Column>
+         <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text="العداد الجديد" width="" />
+         </Column>
+         <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text="قراءة العداد" width="" />
+         </Column>
+         <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text="الحالة" width="" hAlign="Center" />
+         </Column>
+         <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text="تاريخ الانشاء" width="" />
+         </Column>
+
+         <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text="الموافقة" width="" />
+         </Column>    
+         <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text="وقت القراءة" width="" />
+         </Column>              
+         <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+            <Text text=" المزيد" width="" />
+         </Column>
+      </columns>
+      <items>
+         <ColumnListItem>
+            <cells> 
+               <Text text="{ui5User}" />
+               <Text text="{mru}" />
+               <Text text="{lmeterNo}" />
+               <Text text="{oimpMeterRead}" />
+               <Text text="{rmeterNo}" />
+               <Text text="{rimpMeterRead}" />
+               <Text text="{status}" />
+               <Text text="{createdDate}" />
+               <Text text="{updateBy}" />
+               <Text text="{scandt}" />
+
+               <HBox justifyContent="Center" class="">
+                  <Button text="المزيد" press="onShowMore" width="" />
+               </HBox>
+            </cells>
+         </ColumnListItem>
+      </items>
+   </Table>
+</core:FragmentDefinition>

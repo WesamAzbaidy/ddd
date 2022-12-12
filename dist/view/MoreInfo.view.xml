@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:badg="sap.m.BadgeCustomData" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" controllerName="Jepco.ISU.DM.smartmeter.controller.MoreInfo" displayBlock="true" height="100%" busyIndicatorDelay="0">
+   <Shell>
+      <App busy="{appView&gt;/busy}" class="sapUiSizeCompact">
+         <Page title="Meter Services" showHeader="false" id="idMoreInfo">
+            <content>
+               <Panel class="sapMShellGlobalOuterBackground">
+                  <VBox alignItems="Stretch">
+                     <f:SimpleForm id="SimpleFormToolbar">
+                        <VBox alignItems="Center">
+                           <Image src="/img/logo.png" alt="jepco" id="idImg" width="300px" />
+                        </VBox>
+                     </f:SimpleForm>
+                  </VBox>
+                  <FlexBox justifyContent="Center" width="100%" class="sapUiTinyMarginTop" alignItems="Center">
+                     <Toolbar alignItems="Center" ariaLabelledBy="TitleReplacement">
+                        <Title id="TitleTheAddress" text="معلومات عامة" />
+                     </Toolbar>
+                  </FlexBox>
+                  <Table id="generalInformation" class="sapUiResponsiveMargin" growing="true" growingThreshold="10" width="auto" items="{/custTab}">
+                     <columns>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="رقم العداد" width="" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="اسم المشترك" width="" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text=" رقم الملف " width="" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="رابط البيانات" width="" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="نوع الاشترك " width="" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="فئة العداد" width="" hAlign="Center" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="نوع العداد" width="" hAlign="Center" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="الحالة" width="" />
+                        </Column>
+                     </columns>
+                     <items>
+                        <ColumnListItem>
+                           <cells>
+                              <Text text="{geraet}" />
+                              <Text text="{customeName}" />
+                              <Text text="{vrefer}" />
+                              <Text text="{anlage}" />
+                              <Text text="{ttypbez}" />
+                              <Text text="{deviceCategory}" />
+                              <Text text="{meterCats}" />
+                              <Text text="{status}" />
+                           </cells>
+                        </ColumnListItem>
+                     </items>
+                  </Table>
+                  <FlexBox justifyContent="Center" width="100%" class="sapUiTinyMarginTop" alignItems="Center">
+                     <Toolbar alignItems="Center" ariaLabelledBy="TitleReplacement">
+                        <Title text="العداد القديم" />
+                     </Toolbar>
+                  </FlexBox>
+                  <Table id="oldMeter" class="sapUiResponsiveMargin" growing="true" growingThreshold="10" width="auto" items="{/custTab}">
+                     <columns>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="رقم العداد القديم" width="" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="القراءة الحالي المستجرة للعداد القديم " width="" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="القراءة الحالية المصدرة للعداد القديم" width="" hAlign="Center" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="صورة العداد القديم القراءة المستجرة " width="" hAlign="Center" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="صورة العداد القديم القراءة المصدرة " width="" hAlign="Center" />
+                        </Column>
+                     </columns>
+                     <items>
+                        <ColumnListItem>
+                           <cells>
+                              <Text text="{lmeterNo}" />
+                              <Text text="{oimpMeterRead}" />
+                              <Text text="{oexpMeterRead}" />
+                              <FlexBox justifyContent="SpaceAround" width="100%">
+                                 <Image press="onEnterItems" height="150px" width="150px" src="{impimageOm}" />
+                              </FlexBox>
+                              <FlexBox justifyContent="SpaceAround" width="100%">
+                                 <Image press="onEnterItems" height="150px" width="150px" src="{expimageOm}" />
+                              </FlexBox>
+                           </cells>
+                        </ColumnListItem>
+                     </items>
+                  </Table>
+                  <FlexBox justifyContent="Center" width="100%" class="sapUiTinyMarginTop" alignItems="Center">
+                     <Toolbar alignItems="Center" ariaLabelledBy="TitleReplacement">
+                        <Title text="العداد الجديد" />
+                     </Toolbar>
+                  </FlexBox>
+                  <Table id="newMeter" class="sapUiResponsiveMargin" growing="true" growingThreshold="10" width="auto" items="{/custTab}">
+                     <columns>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="رقم العداد الجديد" width="" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="القراءة الحالي المستجرة للعداد الجديد " width="" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="القراءة الحالية المصدرة للعداد الجديد" width="" hAlign="Center" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="صورة العداد الجديد القراءة المستجرة " width="" hAlign="Center" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="صورة العداد الجديد القراءة المصدرة " width="" hAlign="Center" />
+                        </Column>
+                     </columns>
+                     <items>
+                        <ColumnListItem>
+                           <cells>
+                              <Text text="{rmeterNo}" />
+                              <Text text="{rimpMeterRead}" />
+                              <Text text="{rexpMeterRead}" />
+                              <FlexBox justifyContent="SpaceAround" width="100%">
+                                 <Image press="onEnterItems" height="150px" width="150px" src="{impimageNm}" />
+                              </FlexBox>
+                              <FlexBox justifyContent="SpaceAround" width="100%">
+                                 <Image press="onEnterItems" height="150px" width="150px" src="{expimageNm}" />
+                              </FlexBox>
+                           </cells>
+                        </ColumnListItem>
+                     </items>
+                  </Table>
+                  <!-- <FlexBox justifyContent="Center" width="100%" class="sapUiTinyMarginTop" alignItems="Center">
+                     <Toolbar alignItems="Center" ariaLabelledBy="TitleReplacement">
+                        <Title text="المواد المستهلكة في عملية التركيب" />
+                     </Toolbar>
+                  </FlexBox>
+                  <Table id="metersItems" class="sapUiResponsiveMargin" growing="true" growingThreshold="10" width="auto" items="{/custTab/meterItemsQuantityStructures/0}">
+                     <columns>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="قوة العداد بالامبير" width="" />
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+                           <Text text="قاطع آلي " width="" />
+                        </Column>
+                     </columns>
+                     <items>
+                        <ColumnListItem>
+                           <cells>
+                              <Text text="{meterPower}" />
+                              <Text text="{createdDate}" />
+                           </cells>
+                        </ColumnListItem>
+                     </items>
+                  </Table> -->
+
+                  <FlexBox  direction="Column" alignItems="Center" justifyContent="SpaceBetween" class="sapUiResponsiveMargin">
+                     <Text 
+                      renderWhitespace="false"
+                      text="في حال وجود خطأ في القراءات اعلاه يرجى التعديل "
+                      textAlign="Begin"
+                      textDirection="Inherit"
+                      width=""
+                      wrapping="true"
+                      wrappingType="Normal"
+                  ></Text>
+                     <FlexBox width="100%" justifyContent="Center" alignItems="Center" class="sapUiTinyMarginTop">
+                        <Label text="القراءة الحالي المستجرة للعداد القديم" wrapping="true" design="Bold" />
+                        <Input class="sapUiSmallMarginBeginEnd" id="oimpMeterRead" value="{oimpMeterRead}" editable="{/editable}" placeholder="القراءة الحالي المستجرة للعداد القديم">
+                           <layoutData>
+                              <FlexItemData growFactor="0.5" />
+                           </layoutData>
+                        </Input>
+                     </FlexBox>
+                     <FlexBox width="100%" justifyContent="Center" alignItems="Center" class="sapUiTinyMarginTop">
+                        <Label text="القراءة الحالي المصدرة للعداد القديم" wrapping="true" design="Bold" />
+                        <Input class="sapUiSmallMarginBeginEnd" id="oexpMeterRead" value="{oexpMeterRead}" editable="{/editable}" placeholder="القراءة الحالية المصدرة للعداد القديم">
+                           <layoutData>
+                              <FlexItemData growFactor="0.5" />
+                           </layoutData>
+                        </Input>
+                     </FlexBox>
+                     <FlexBox width="100%" justifyContent="Center" alignItems="Center" class="sapUiTinyMarginTop">
+                        <Label text="القراءة الحالي المستجرة للعداد الجديد" wrapping="true" design="Bold" />
+                        <Input class="sapUiSmallMarginBeginEnd" id="rimpMeterRead" value="{rimpMeterRead}" editable="{/editable}" placeholder="القراءة الحالي المستجرة للعداد الجديد">
+                           <layoutData>
+                              <FlexItemData growFactor="0.5" />
+                           </layoutData>
+                        </Input>
+                     </FlexBox>
+                     <FlexBox width="100%" justifyContent="Center" alignItems="Center" class="sapUiTinyMarginTop">
+                        <Label text="القراءة الحالي المصدرة للعداد الجديد" wrapping="true" design="Bold" />
+                        <Input class="sapUiSmallMarginBeginEnd" id="rexpMeterRead" value="{rexpMeterRead}" editable="{/editable}" placeholder="القراءة الحالية المصدرة للعداد الجديد">
+                           <layoutData>
+                              <FlexItemData growFactor="0.5" />
+                           </layoutData>
+                        </Input>
+                     </FlexBox>
+                     <Button id="btnIdEditRead" text="تعديل القراءات " press="onEditRead" width="" class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginBottom sapUiSmallMarginBeginEnd" />
+                  </FlexBox>
+                  <FlexBox width="100%" justifyContent="Center" alignItems="Center" class="sapUiTinyMarginTop">
+                     <Button id="btnIdReplacment" type="Emphasized" icon="sap-icon://repost" text="تبديل العداد" press="onReplacment" width="" class="sapUiTinyMarginBottom sapUiSmallMarginBeginEnd" />
+                     <Button id="btnIdNotReplacment" text="عدم التبديل " press="onNotReplacment" width="" class="sapUiTinyMarginBegin sapUiTinyMarginBottom sapUiSmallMarginBeginEnd" />
+                     <Button id="btnIdDelete" type="Reject" icon="sap-icon://delete" text="الغاء الحركة" press="onReplacmentDelete" width="" class="sapUiTinyMarginBottom sapUiSmallMarginBeginEnd" />
+                  </FlexBox>
+                  <FlexBox width="100%" justifyContent="End" alignItems="End" class="sapUiTinyMarginTop">
+                     <Button id="idBackToFiberBoxInfo" text="السابق" type="Emphasized" press="onPrevious" icon="sap-icon://navigation-right-arrow" class="sapUiTinyMarginBottom sapUiSmallMarginBeginEnd" />
+                  </FlexBox>
+               </Panel>
+            </content>
+         </Page>
+      </App>
+   </Shell>
+</mvc:View>

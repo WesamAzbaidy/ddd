@@ -1,0 +1,99 @@
+<mvc:View
+	controllerName="Jepco.ISU.DM.smartmeter.controller.Register"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+    xmlns:card="sap.f.cards"	
+    xmlns:f="sap.f"	    
+	xmlns:c="sap.ui.core"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+ <Panel class="sapMShellGlobalOuterBackground">
+ 	<VBox alignItems="Center">
+	<Image src="/img/logo.png" 
+								alt="jepco" 
+								id="idImgReg" 
+								width="220px" 
+								height="40px"/>
+		<f:Card class="sapUiMediumMargin" width="18rem" >
+		<f:header >
+			<card:Header 
+				title="شركة الكهرباء الأردنية المساهمة العامة المحدودة"
+				subtitle="تسجيل مستخدم جديد"
+				iconSrc= "sap-icon://customer" />
+		</f:header>
+		<f:content >
+			<VBox   width="16rem"
+                    alignItems="End "
+					height="500px"
+					class="sapUiSmallMargin" 
+					fitContainer="true">
+				
+				 <HBox justifyContent="SpaceBetween" alignItems="Center"> 
+                        <Label required="true"  text="اسم المستخدم" width="7rem"/>
+						<Input placeholder="اسم المستخدم"           width="9rem"/> 
+                 </HBox><HBox justifyContent="SpaceBetween" alignItems="Center"> 
+                        <Label required="true"  text="الرقم الوظيفي" width="7rem"/>
+						<Input placeholder="الرقم الوظيفي"  type="Number" width="9rem"/> 
+                 </HBox>  <HBox justifyContent="SpaceBetween" alignItems="Center"> 
+                        <Label required="true"  text="الرقم الوطني" width="7rem"/>
+						<Input placeholder="الرقم الوطني" type="Number" width="9rem"/> 
+			     </HBox><HBox justifyContent="SpaceBetween" alignItems="Center"> 
+                        <Label required="true"  text="تاريخ الميلاد" width="7rem"/>
+						<Input placeholder="تاريخ الميلاد" type="Date" width="9rem"/> 
+			     </HBox><HBox justifyContent="SpaceBetween" alignItems="Center"> 
+                        <Label required="true"  text="كلمة المرور" width="7rem"/>
+						<Input id="idRegPass1" placeholder="كلمة المرور"  showValueHelp="true"
+                                valueHelpIconSrc="sap-icon://show"
+                                valueHelpRequest="onShowPassword" 
+                                type="Password" width="9rem"
+                                liveChange="onRegPassLiveChange"/> 
+			     </HBox><HBox justifyContent="SpaceBetween" alignItems="Center"> 
+                        <Label required="true"  text="تأكيد كلمة المرور" width="7rem"/>
+						<Input  id="idRegPass2" valueState="Error" placeholder= "تأكيد كلمة المرور" showValueHelp="true"
+                                valueHelpIconSrc="sap-icon://show"
+                                valueHelpRequest="onShowRepPassword" 
+                                type="Password" width="9rem"/>  
+			     </HBox><HBox justifyContent="SpaceBetween" alignItems="Center"> 
+                        <Label required="true"  text="رقم الهاتف" width="7rem"/>
+						<Input placeholder="رقم الهاتف" type="Number" width="9rem"/> 
+			     </HBox>  
+                <HBox justifyContent="SpaceBetween" alignItems="Center"> 
+                <Text/>
+                </HBox>
+                <HBox justifyContent="SpaceBetween"    alignItems="Center">             				 
+                        <Button id="idContinue"
+                                width="14rem"  
+                                text="تسـجيل"
+                                press="onNewUser"
+                                type="Emphasized"
+                                class="sapUiTinyMarginBegin" 
+                                justifyContent="Center"  
+                                alignContent="Center" />
+                </HBox> 
+                <HBox justifyContent="SpaceBetween"    alignItems="Center"> <Text></Text></HBox>
+                <HBox justifyContent="SpaceBetween"    alignItems="Center"> 
+                <Text text= "*****  شروط كلمة المرور *****" width="19em" />
+                </HBox>                  
+                <HBox justifyContent="SpaceBetween"    alignItems="Center"> 
+                <Text id="id7CharReg" text= "* طول الكلمة 7 خانات على الاقل" width="19em"/>   
+                </HBox>   
+                <HBox justifyContent="SpaceBetween"    alignItems="Center"> 
+                <Text id="id3CharReg"  text= "* ثلاثة حروف علي الاقل" width="19em" />  
+                </HBox>
+                <HBox justifyContent="SpaceBetween"    alignItems="Center"> 
+                <Text id="id3NumReg"  text= "* ثلاثة ارقام علي الاقل" width="19em"/>   
+                </HBox>   
+                <HBox justifyContent="SpaceBetween"    alignItems="Center"> 
+                <Text id="id1CharReg"  text=  "* رمز خاص واحد علي الاقل مثل _ @ # $ % ^  *" width="19em"/>
+                </HBox>           
+                <HBox justifyContent="SpaceBetween"    alignItems="Center"> 
+                <Text id="id1ChartmpReg"  text=   ""   width="19em" />
+                </HBox>                                  
+			</VBox> 
+		</f:content>
+	</f:Card>
+	</VBox>
+ </Panel>  
+</mvc:View>

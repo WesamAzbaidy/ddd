@@ -1,0 +1,34 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+    <VBox  class="sapUiSmallMargin">
+        <Label labelFor="rbg" text="استعلام" />
+        <RadioButtonGroup id="rbg" columns="3" class="sapUiMediumMarginEnd" press="onShowButton">
+            <RadioButton id="RB3-1" text="حسب التاريخ" />
+            <RadioButton id="RB3-2" text="حسب الجوله" />
+            <RadioButton id="RB3-3" text="الجميع" />
+        </RadioButtonGroup>
+		<!-- <Label text="التاريخ من" labelFor="from"/>
+<DatePicker
+			id="from"
+			width="300px"
+			displayFormat="short"
+			change="handleChange"
+			class="sapUiSmallMarginBottom"/>
+		<Label text="الى" labelFor="to"/>
+		<DatePicker
+			id="to"
+			width="300px"
+			displayFormat="short"
+			change="handleChange"
+			class="sapUiSmallMarginBottom"/>  -->
+
+
+
+			
+			<!-- <Input
+			id="inputNumber"
+			type="Number"s
+			placeholder="رقم الجوله"
+			ariaLabelledBy="InputNumberLabel"
+			width="300px"/> -->
+    </VBox>
+</core:FragmentDefinition>

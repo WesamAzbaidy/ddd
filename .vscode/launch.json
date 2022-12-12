@@ -1,0 +1,111 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Start smartmeter",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npx",
+            "cwd": "${workspaceFolder}",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--open",
+                "'test/flpSandbox.html#JepcoISUDMsmartmeter-display'"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect"
+            }
+        },
+        {
+            "name": "Start smartmeter with UI5 Version",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npx",
+            "cwd": "${workspaceFolder}",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--open",
+                "'test/flpSandbox.html#JepcoISUDMsmartmeter-display'",
+                "--",
+                "${input:UI5Version}"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect"
+            }
+        },
+        {
+            "name": "Start smartmeter Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "npx",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--config",
+                "./ui5-local.yaml",
+                "--open",
+                "'test/flpSandbox.html#JepcoISUDMsmartmeter-display'"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {}
+        },
+        {
+            "name": "smartmeter",
+            "cwd": "${workspaceFolder}",
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npx",
+            "args": [
+                "--open",
+                "test/flpSandbox.html#JepcoISUDMsmartmeter-display"
+            ],
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"c:\\\\Users\\\\RamiAlarab\\\\projects\\\\smartmeter\"}",
+                "FIORI_TOOLS_UI5_VERSION": "",
+                "FIORI_TOOLS_UI5_URI": "https://ui5.sap.com"
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "UI5Version",
+            "type": "command",
+            "command": "sap.ux.appGenerator.ui5Version"
+        }
+    ]
+}

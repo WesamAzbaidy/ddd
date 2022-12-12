@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/base/ManagedObject"],function(e){"use strict";return e.extend("Jepco.ISU.DM.smartmeter.utils.formatter",{removeMatnr:function(e){return"123"}})});

@@ -1,0 +1,195 @@
+<mvc:View
+	controllerName="Jepco.ISU.DM.smartmeter.controller.RestPass"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" 
+    xmlns:card="sap.f.cards"	
+    xmlns:f="sap.f"	
+    xmlns:core="sap.ui.core" 
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+ <Panel class="sapMShellGlobalOuterBackground">
+ 	<VBox alignItems="Center">
+    <Image src="/img/logo.png" alt="jepco" id="idImg" width="300px" />
+	<!-- <Image  src="img/Jepco.png" 
+								alt="jepco" 
+								id="idImg" 
+								width="220px" 
+								height="110px"/> -->
+		<f:Card class="sapUiMediumMargin" width="22rem" >
+		<f:header >
+			<card:Header 
+				title="شركة الكهرباء الأردنية المساهمة العامة المحدودة"
+				subtitle="تغير كلمة المرور"
+				iconSrc= "sap-icon://customer" />
+		</f:header>
+		<f:content >
+			<VBox   width="20rem"
+                    alignItems="End"
+					
+					class="sapUiSmallMargin" 
+					fitContainer="true">
+				
+				 <HBox justifyContent="SpaceBetween" alignItems="Center"> 
+                        <Label  
+                            design="Standard"
+                            displayOnly="false"
+                            required="true" 
+                            text="اسم المستخدم"
+                            textAlign="Begin"
+                            textDirection="Inherit"
+                            vAlign="Inherit"
+                            width="8rem"
+                            wrapping="false"
+                            wrappingType="Normal"
+                        ></Label>
+						<Input maxLength='12' id="idUserInput" liveChange="onUserInput" placeholder="اسم المستخدم"  type="Text" width="12rem"></Input> 
+			     </HBox>
+				 <HBox justifyContent="SpaceBetween"    alignItems="Center">
+                            <Label  
+                            design="Standard"
+                            displayOnly="false"
+                            required="true" 
+                            text="كلمة المرور الحالية"
+                            textAlign="Begin"
+                            textDirection="Inherit"
+                            vAlign="Inherit"
+                            width="8rem"
+                            wrapping="false"
+                            wrappingType="Normal"
+                        ></Label>
+			            <Input  maxLength='12'
+                                id="idOldPass"
+                                placeholder="كلمة المرور"  
+                                type="Password"  
+                                showValueHelp="true"
+                                valueHelpIconSrc="sap-icon://show"
+                                valueHelpRequest="onShowPassword" 
+                                width="12rem"></Input>
+                 </HBox> 
+				 <HBox justifyContent="SpaceBetween"    alignItems="Center">
+                            <Label  
+                            design="Standard"
+                            displayOnly="false"
+                            required="true" 
+                            text="كلمة المرور الجديده"
+                            textAlign="Begin"
+                            textDirection="Inherit"
+                            vAlign="Inherit"
+                            width="8rem"
+                            wrapping="false"
+                            wrappingType="Normal"
+                        ></Label>
+			            <Input  maxLength='12' liveChange="onLiveChange" id="idNewPass" placeholder="كلمة المرور الجديده"  
+                                showValueHelp="true"
+                                valueHelpIconSrc="sap-icon://show"
+                                valueHelpRequest="onShowPassword" 
+                                type="Password"   width="12rem"></Input>
+                 </HBox> 
+				 <HBox justifyContent="SpaceBetween"    alignItems="Center">
+                            <Label   
+                            design="Standard"
+                            displayOnly="false"
+                            required="true" 
+                            text="تأكيد كلمة المرور"
+                            textAlign="Begin"
+                            textDirection="Inherit"
+                            vAlign="Inherit"
+                            width="8rem"
+                            wrapping="false"
+                            wrappingType="Normal"
+                        ></Label>
+			            <Input  showValueHelp="true"
+                                valueHelpIconSrc="sap-icon://show"
+                                valueHelpRequest="onShowPassword" 
+                                maxLength='12' liveChange="onLiveChange"  id="idNewPassCon" placeholder="تأكيد كلمة المرور"  type="Password"   width="12rem"></Input>
+                 </HBox>    
+                   <HBox justifyContent="SpaceBetween"    alignItems="Center"> <Text/> </HBox>   
+                  <HBox justifyContent="SpaceBetween"    alignItems="Center">             				 
+                        <Button  id="idContinue"
+					    width="20rem"  
+						text="تغير رمز المرور"
+						press="OnRestPassPress"
+						type="Emphasized"
+						class="sapUiTinyMarginBegin"  
+                                            />
+                 </HBox> 
+                 <HBox justifyContent="SpaceBetween"    alignItems="Center"> <Text/> </HBox>   
+                 <HBox justifyContent="SpaceBetween"    alignItems="Center"> 
+
+                 <Text  
+                     text= "*****  شروط كلمة المرور *****"
+                      textAlign="Begin"
+                            textDirection="Inherit" 
+                            width="19em"
+                 >
+                     
+                 </Text>   
+                 </HBox>                  
+                 <HBox justifyContent="SpaceBetween"    alignItems="Center"> 
+                 <Text  id="id7Char"
+                     text= "* طول الكلمة 7 خانات على الاقل"
+                      textAlign="Begin"
+                            textDirection="Inherit" 
+                            width="19em"
+                 >
+                     
+                 </Text>   
+                 </HBox>   
+                 <HBox justifyContent="SpaceBetween"    alignItems="Center"> 
+                 <Text    id="id3Char"
+                     text= "* ثلاثة حروف علي الاقل"
+                      textAlign="Begin"
+                            textDirection="Inherit" 
+                            width="19em"
+                 >
+                     
+                 </Text>   
+                 </HBox>
+                 <HBox justifyContent="SpaceBetween"    alignItems="Center"> 
+                 <Text    id="id3Num"
+                     text= "* ثلاثة ارقام علي الاقل"
+                      textAlign="Begin"
+                            textDirection="Inherit" 
+                            width="19em"
+                 >
+                     
+                 </Text>   
+                 </HBox>   
+                 <HBox justifyContent="SpaceBetween"    alignItems="Center"> 
+                 <Text id="id1Char"
+                     text=  "* رمز خاص واحد علي الاقل مثل _ @ $ % ^  *"
+                      textAlign="Begin"
+                            textDirection="Inherit" 
+                            width="19em"
+                 >
+                     
+                 </Text>   
+                 
+                 </HBox>           
+                    <HBox justifyContent="SpaceBetween"    alignItems="Center"> 
+                 <!-- <Text id="id1Chartmp"
+                     text=   ""
+                      textAlign="Begin"
+                            textDirection="Inherit" 
+                            width="19em"
+                 >
+                     
+                 </Text>    -->
+                 
+                 </HBox>   
+                <Toolbar>
+				<ToolbarSpacer/>
+              <FlexBox class="sapUiTinyMarginTopBottom sapUiSmallMarginBeginEnd" width="100%" alignItems="Center">
+               <Button text="السابق" press="onResetBack" class="sapUiTinyMarginBegin" type="Emphasized" icon="sap-icon://open-command-field" />
+              </FlexBox>  
+            	 </Toolbar>
+                         
+			</VBox> 
+		</f:content>
+	</f:Card>
+	</VBox>
+</Panel>
+  
+</mvc:View>

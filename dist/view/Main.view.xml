@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" controllerName="Jepco.ISU.DM.smartmeter.controller.Main" displayBlock="true" height="100%" busyIndicatorDelay="0">
+   <Page title="Meter Services" showHeader="false" id="idMain">
+      <content>
+         <Panel class="sapMShellGlobalOuterBackground">
+            <VBox alignItems="Stretch">
+               <!-- <f:SimpleForm id="SimpleFormToolbar">
+                  <VBox alignItems="Center">
+                     <Image src="/img/logo.png" alt="jepco" id="idImg" width="220px" height="40px" />
+                  </VBox>
+               </f:SimpleForm> -->
+               <IconTabBar enableTabReordering="true" backgroundDesign="Translucent" expanded="true" id="idIconTabBar" class="sapUiResponsiveContentPadding">
+                  <items>
+                     <IconTabFilter text="العدادات الجديدة" icon="sap-icon://repost" iconColor="Positive" id="idTabNewMeter" key="newMeter">
+                        <core:Fragment fragmentName="Jepco.ISU.DM.smartmeter.fragment.newMeter" type="XML" />
+                     </IconTabFilter>
+                     <IconTabFilter text="جميع العدادات " icon="sap-icon://database" iconColor="Negative" id="idTabOtherMeter" key="otherMeter">
+                        <core:Fragment fragmentName="Jepco.ISU.DM.smartmeter.fragment.otherMeter" type="XML" />
+                     </IconTabFilter>
+                     <IconTabFilter text="الملاحظات" 	icon="sap-icon://notes" iconColor="Marker" key="techhNotes">
+                        <core:Fragment fragmentName="Jepco.ISU.DM.smartmeter.fragment.techhNotes" type="XML" />
+                     </IconTabFilter>
+                     <IconTabFilter text="تعين جولة" 	icon="sap-icon://activity-assigned-to-goal" iconColor="Neutral" key="mru">
+                        <core:Fragment fragmentName="Jepco.ISU.DM.smartmeter.fragment.assignMru" type="XML" />
+                     </IconTabFilter>      
+                     <IconTabFilter text="تقارير" 	icon="sap-icon://manager-insight" iconColor="Contrast" key="rep">
+                        <core:Fragment fragmentName="Jepco.ISU.DM.smartmeter.fragment.report" type="XML" />
+                     </IconTabFilter>                                     
+                  </items>
+               </IconTabBar>
+            </VBox>
+         </Panel>
+      </content>
+   </Page>
+</mvc:View>

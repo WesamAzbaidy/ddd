@@ -1,0 +1,25 @@
+<mvc:View
+	controllerName="Jepco.ISU.DM.smartmeter.controller.NewMeterRep"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+    xmlns:f="sap.ui.layout.form" 
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0" 
+>
+	<VBox  class="sapUiSmallMargin">
+ 		<f:SimpleForm   id="SimpleNewMeterReportForm"
+                        editable="true"
+                        layout="ColumnLayout"
+                        title="تقرير بالعدادات الجديده / قبل الموافقة"
+                        columnsM="2"
+                        columnsL="3"
+                        columnsXL="3">
+			<f:content>
+ 
+             <Button text="Export Excel File"  width="200px" press="onNewMeterRepExcelBTNPress"/>
+         </f:content>
+         </f:SimpleForm >
+    </VBox  >
+</mvc:View>

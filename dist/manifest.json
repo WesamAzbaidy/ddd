@@ -1,0 +1,219 @@
+{
+  "_version": "1.7.0",
+  "sap.app": {
+    "id": "Jepco.ISU.DM.smartmeter",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+    "dataSources": {}
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": { 
+    "dependencies": {
+      "minUI5Version": "1.30.0",
+      "libs": {
+        "sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "Jepco.ISU.DM.smartmeter.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true,
+          "groupId": "$direct"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "Jepco.ISU.DM.smartmeter.view",
+        "controlAggregation": "pages",
+        "controlId": "app"
+      },
+      "routes": [
+        {
+          "name": "RouteApp",
+          "pattern": "RouteApp",
+          "target": ["TargetApp"]
+        },
+        {
+          "name": "Login",
+          "pattern": "Login",
+          "target": ["Login"]
+        },
+        {
+          "name": "Main",
+          "pattern": "Main",
+          "target": ["Main"]
+        },
+        {
+          "name": "RestPass",
+          "pattern": "RestPass",
+          "target": ["RestPass"]
+        },
+        {
+          "name": "Register",
+          "pattern": "Register",
+          "target": ["Register"]
+        },
+        {
+          "name": "MoreInfo",
+          "pattern": "MoreInfo",
+          "target": ["MoreInfo"]
+        },
+        {
+          "name": "Report",
+          "pattern": "Report",
+          "target": ["Report"]
+        },
+        {
+          "name": "StandRep",
+          "pattern": "StandRep",
+          "target": ["StandRep"]
+        },
+        {
+          "name": "RepReport",
+          "pattern": "RepReport",
+          "target": ["RepReport"]
+        },
+        {
+          "name": "NewMeterRep",
+          "pattern": "NewMeterRep",
+          "target": ["NewMeterRep"]
+        }
+
+      ],
+      "targets": {
+        "TargetApp": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "App",
+          "viewName": "App"
+        },
+        "Login": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "idLogin",
+          "viewName": "Login"
+        } ,
+        "Main": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "idMain",
+          "viewName": "Main"
+        },
+        "RestPass": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "idRestPass",
+          "viewName": "RestPass"
+        } ,
+        "Register": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "idRegister",
+          "viewName": "Register"
+        }  ,
+        "MoreInfo": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "idMoreInfo",
+          "viewName": "MoreInfo"
+        } ,
+        "Report": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "idReport",
+          "viewName": "Report"
+        } ,
+        "StandRep": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "idStandRep",
+          "viewName": "StandRep"
+        } ,
+        "RepReport": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "idRepReport",
+          "viewName": "RepReport"
+        }   ,
+        "NewMeterRep": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "idNewMeterRep",
+          "viewName": "NewMeterRep"
+        }  
+      }
+    },
+    "rootView": {
+      "viewName": "Jepco.ISU.DM.smartmeter.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

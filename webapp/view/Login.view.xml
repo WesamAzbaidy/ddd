@@ -1,0 +1,118 @@
+<mvc:View
+	controllerName="Jepco.ISU.DM.smartmeter.controller.Login"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:card="sap.f.cards"
+	xmlns:f="sap.f"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+	<!-- <Panel  width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">  -->
+	<!-- <Panel class="sapMShellGlobalOuterBackground"> -->
+	<Panel class="sapMShellGlobalOuterBackground">
+		<VBox alignItems="Center">
+			<!-- <Image
+				src="/img/logo.png"
+				alt="jepco"
+				id="idImg"
+				width="280px"
+				height="60px"
+			/> -->
+			 <Image
+				src="https://www.jepco.com.jo//Siteware/Siteware_File/image/JEPCO/logo.png"
+				alt="jepco"
+				id="idImg"
+				width="280px"
+				height="60px"
+			/>
+			
+			<f:Card
+				class="sapUiMediumMargin"
+				width="28rem"
+			>
+				<f:header>
+					<card:Header
+						title="شركة الكهرباء الأردنية المساهمة العامة المحدودة"
+						subtitle="تسجيل الدخول"
+						iconSrc="sap-icon://customer"
+					/>
+				</f:header>
+				<f:content>
+					<VBox
+						alignItems="Center"
+						height="250px"
+						width="26rem"
+						class="sapUiSmallMargin"
+						fitContainer="true"
+						justifyContent="SpaceBetween"
+						alignContent="Center"
+					>
+						<HBox
+							justifyContent="SpaceBetween"
+							alignItems="Center"
+						>
+							<Input
+								id="idUser"
+								placeholder="اسم المستخدم"
+								width="16rem"
+							/>
+						</HBox>
+						<HBox
+							justifyContent="SpaceBetween"
+							alignItems="Center"
+						>
+							<Input
+								id="idPass"
+								placeholder="كلمة المرور"
+								type="Password"
+								width="16rem"
+								showValueHelp="true"
+                                valueHelpIconSrc="sap-icon://show"
+                                valueHelpRequest="onShowPassword" 
+							/>
+						</HBox>
+							<VBox>
+                               <CheckBox select="onRememberMe" text="تذكرني"/>
+	                        </VBox>
+						<HBox
+							renderType="Bare"
+							justifyContent="SpaceBetween"
+							alignItems="Center"
+						>
+							<Button
+								width="12rem"
+								text="تسجيل الدخول"
+								press="OnLoginPress"
+								type="Emphasized"
+								class="sapUiTinyMarginBegin"
+								icon="sap-icon://visits"
+							/>
+						</HBox>
+
+						<HBox
+							renderType="Bare"
+							justifyContent="SpaceBetween"
+							alignItems="Center"
+						>
+							<Button
+								width="12rem"
+								icon="sap-icon://primary-key"
+								text="تغير كلمة المرور"
+								type="Transparent"
+								press="OnRestPassPress"
+							/>
+							<!-- <Button
+								width="8rem"
+								icon="sap-icon://add-employee"
+								text="مستخدم جديد"
+								type="Transparent"
+								press="OnRegister"
+							/> -->
+						</HBox>
+					</VBox>
+				</f:content>
+			</f:Card>
+		</VBox>
+	</Panel>
+</mvc:View>

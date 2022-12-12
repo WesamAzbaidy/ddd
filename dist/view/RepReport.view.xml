@@ -1,0 +1,75 @@
+<mvc:View 
+          xmlns:core="sap.ui.core" 
+          xmlns="sap.m"  
+          xmlns:f="sap.ui.layout.form" 
+	controllerName="Jepco.ISU.DM.smartmeter.controller.RepReport"
+	xmlns:mvc="sap.ui.core.mvc"
+>
+
+	<VBox  class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormBuildingReportRep"
+				editable="true"
+			layout="ColumnLayout"
+			title="تقرير معلومات تبديل العدادات"
+			columnsM="2"
+			columnsL="3"
+			columnsXL="3">
+			<f:content>
+			<Label text="التاريخ" />
+			<DatePicker id="idRepDateFm" 
+				        placeholder="yyyy-mm-dd" 
+						valueFormat="yyyy-mm-dd" 
+						displayFormat="short"
+						class="sapUiSmallMarginBottom"/>
+						
+			<DatePicker id="idRepDateTo" 
+						valueFormat="yyyy-mm-dd" 
+						placeholder="yyyy-mm-dd" 
+						displayFormat="short"
+						class="sapUiSmallMarginBottom"/>
+ 
+     </f:content>
+  </f:SimpleForm>	
+ 
+		<f:SimpleForm id="SimpleFormBuildingReport1Rep"
+				editable="true"
+			layout="ColumnLayout"
+			columnsM="2"
+			columnsL="3"
+			columnsXL="3">
+			<f:content>
+
+				<Label text= "اسم المستخدم" />
+				<Input id="idRepBuildUser">
+                  <layoutData>
+						<f:ColumnElementData  cellsSmall="4" cellsLarge="4" />
+					</layoutData>
+                    </Input>
+                 			 
+ 
+     </f:content>
+  </f:SimpleForm>	
+
+ 
+			<f:SimpleForm id="SimpleFormBuildingReport2Rep"
+			editable="true"
+			layout="ColumnLayout"
+			columnsM="2"
+			columnsL="3"
+			columnsXL="3">
+			<f:content>
+			 
+				<Button text="Export Excel File"  width="200px" press="onReplaceExcelRepBTNPress"
+					 >
+					<layoutData>
+					<f:ColumnElementData  cellsSmall="2" cellsLarge="2" />
+						 <FlexItemData growFactor="2" />  
+					</layoutData>
+				</Button>
+				     </f:content>
+    </f:SimpleForm>	
+	 
+   </VBox>
+ 
+
+</mvc:View>

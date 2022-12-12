@@ -1,0 +1,67 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+    xmlns:f="sap.ui.layout.form" 
+	displayBlock="true"
+    controllerName="Jepco.ISU.DM.smartmeter.controller.StandRep"
+  
+> 
+	<VBox  class="sapUiSmallMargin">
+		<f:SimpleForm   id="SimpleFormStandReportForm"
+                        editable="true"
+                        layout="ColumnLayout"
+                        title="تقرير الجولات منجز / غير منجز"
+                        columnsM="2"
+                        columnsL="3"
+                        columnsXL="3">
+			<f:content>
+               <Label width="65px" id="idmruLabel" text="الجولة" wrapping="true" design="Bold" />
+               <Input placeholder="الجولة" id="idmru" type="Number" width="100px" maxLength="8" liveChange="onMRUMax">
+                  <layoutData>
+                     <FlexItemData growFactor="0.5" />
+                  </layoutData>
+               </Input>
+ 
+         </f:content>
+  		</f:SimpleForm>	
+		<f:SimpleForm   id="SimpleFormStandReportForm1"
+                        editable="true"
+                        layout="ColumnLayout"
+                        columnsM="2"
+                        columnsL="3"
+                        columnsXL="3">
+			<f:content>
+               <Label text="التاريخ" />
+               <DatePicker id="idDateFm1" 
+				      placeholder="yyyy-mm-dd" 
+						valueFormat="yyyy-mm-dd" 
+						displayFormat="short"
+						class="sapUiSmallMarginBottom"/>
+			      <DatePicker id="idDateTo1" 
+						valueFormat="yyyy-mm-dd" 
+						placeholder="yyyy-mm-dd" 
+						displayFormat="short"
+						class="sapUiSmallMarginBottom"/>
+ 
+         </f:content>
+  		</f:SimpleForm>	
+		<f:SimpleForm   id="SimpleFormStandReport"
+                        editable="true"
+                        layout="ColumnLayout"
+                        columnsM="2"
+                        columnsL="3"
+                        columnsXL="3">
+			<f:content>
+			    <Button text="Export Excel File"  width="200px" press="onStandRepExcelBTNPress"
+					 >
+					<layoutData>
+					<f:ColumnElementData  cellsSmall="2" cellsLarge="2" />
+						 <FlexItemData growFactor="2" />  
+					</layoutData>
+				</Button>
+			</f:content>
+        </f:SimpleForm>	
+	 
+   </VBox>
+</mvc:View>
