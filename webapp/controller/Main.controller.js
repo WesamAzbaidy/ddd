@@ -153,6 +153,7 @@ sap.ui.define(
             //   var aData = oModel1.getProperty("/d/results");
             //   oModel1.setData({ modelData : aData });
             //   oTable.setModel(oModel1, "odata");
+            var x = { fff: inpva };
 
             var oModel = new sap.ui.model.json.JSONModel();
             oModel.setData(oData);
@@ -763,10 +764,206 @@ sap.ui.define(
       // 		BusyIndicator.hide();
       // 	});
       //  },
-	  onShowButton:function name(oEvent) {
-	let valueRD=this.getView().byId("rbg").getSelectedButton();
-	alert(valueRD);
-	},
+      onShowButton: function name(oEvent) {
+        let valueRD = this.getView().byId("rbg").getSelectedButton();
+        var radioButtonID = valueRD.sId.split("--").pop();
+        switch (radioButtonID) {
+          case "RDB-Date":
+            {
+              let valueSimpleForm = this.getView()
+                .byId("SimpleFormDate")
+                .setVisible(true);
+              let valueSimpleForm2 = this.getView()
+                .byId("SimpleFormTour")
+                .setVisible(false);
+            }
+            break;
+          case "RDB-Tour":
+            {
+              let valueSimpleForm = this.getView()
+                .byId("SimpleFormTour")
+                .setVisible(true);
+              let valueSimpleForm2 = this.getView()
+                .byId("SimpleFormDate")
+                .setVisible(false);
+            }
+            break;
+          case "RDB-All": {
+            let valueSimpleForm = this.getView()
+              .byId("SimpleFormTour")
+              .setVisible(false);
+            let valueSimpleForm2 = this.getView()
+              .byId("SimpleFormDate")
+              .setVisible(false);
+          }
+          default:
+            break;
+        }
+      },
+      onShowTable: function () {
+        let valueSimpleForm = this.getView()
+          .byId("idTableData")
+          .setVisible(true);
+      },
+      showPageDetalis: function () {
+        alert("wwwwwwwwww");
+      },
+      onShowButton1: function () {
+        let valueRD = this.getView().byId("rbgAssignMru").getSelectedButton();
+        var radioButtonID = valueRD.sId.split("--").pop();
+        switch (radioButtonID) {
+          case "RDBTour":
+            {
+              let valueSimpleForm = this.getView()
+                .byId("SimpleFormChange354wideDual")
+                .setVisible(true);
+              let valueSimpleForm2 = this.getView()
+                .byId("singleMeter")
+                .setVisible(false);
+              let valueSimpleForm3 = this.getView()
+                .byId("execlFile")
+                .setVisible(false);
+              let valueSimpleForm4 = this.getView()
+                .byId("singleMeterTour")
+                .setVisible(false);
+              let valueTable = this.getView()
+                .byId("idTableRound")
+                .setVisible(true);
+              let valueTable1 = this.getView()
+                .byId("tableSingleMeter")
+                .setVisible(false);
+              let valueTable2 = this.getView()
+                .byId("tableFileExcel")
+                .setVisible(false);
+              let valueTable3 = this.getView()
+                .byId("tableSingleMeterTour")
+                .setVisible(false);
+            }
+            break;
+          case "RDBSingle":
+            {
+              let valueSimpleForm = this.getView()
+                .byId("SimpleFormChange354wideDual")
+                .setVisible(false);
+              let valueSimpleForm2 = this.getView()
+                .byId("singleMeter")
+                .setVisible(true);
+              let valueSimpleForm3 = this.getView()
+                .byId("execlFile")
+                .setVisible(false);
+              let valueSimpleForm4 = this.getView()
+                .byId("singleMeterTour")
+                .setVisible(false);
+              let valueTable = this.getView()
+                .byId("idTableRound")
+                .setVisible(false);
+              let valueTable1 = this.getView()
+                .byId("tableSingleMeter")
+                .setVisible(true);
+              let valueTable2 = this.getView()
+                .byId("tableFileExcel")
+                .setVisible(false);
+              let valueTable3 = this.getView()
+                .byId("tableSingleMeterTour")
+                .setVisible(false);
+            }
+            break;
+          case "RDBFileExecl": {
+            let valueSimpleForm = this.getView()
+              .byId("SimpleFormChange354wideDual")
+              .setVisible(false);
+            let valueSimpleForm2 = this.getView()
+              .byId("singleMeter")
+              .setVisible(false);
+            let valueSimpleForm3 = this.getView()
+              .byId("execlFile")
+              .setVisible(true);
+            let valueSimpleForm4 = this.getView()
+              .byId("singleMeterTour")
+              .setVisible(false);
+            let valueTable = this.getView()
+              .byId("idTableRound")
+              .setVisible(false);
+            let valueTable1 = this.getView()
+              .byId("tableSingleMeter")
+              .setVisible(false);
+            let valueTable2 = this.getView()
+              .byId("tableFileExcel")
+              .setVisible(true);
+            let valueTable3 = this.getView()
+              .byId("tableSingleMeterTour")
+              .setVisible(false);
+            break;
+          }
+          case "RDBTourSingleMeter":
+            {
+              let valueSimpleForm = this.getView()
+                .byId("SimpleFormChange354wideDual")
+                .setVisible(false);
+              let valueSimpleForm2 = this.getView()
+                .byId("singleMeter")
+                .setVisible(false);
+              let valueSimpleForm3 = this.getView()
+                .byId("execlFile")
+                .setVisible(false);
+              let valueSimpleForm4 = this.getView()
+                .byId("singleMeterTour")
+                .setVisible(true);
+              let valueTable = this.getView()
+                .byId("idTableRound")
+                .setVisible(false);
+              let valueTable1 = this.getView()
+                .byId("tableSingleMeter")
+                .setVisible(false);
+              let valueTable2 = this.getView()
+                .byId("tableFileExcel")
+                .setVisible(false);
+              let valueTable3 = this.getView()
+                .byId("tableSingleMeterTour")
+                .setVisible(true);
+            }
+            break;
+          default:
+            break;
+        }
+      },
+      saveExcelFile:function(){
+        alert("www");
+      },
+      addSingleMeter: function () {
+        // var rond = this.getView().byId("teamRound").getValue();
+        var usr = this.getView().byId("NameUser").getSelectedItem()
+          .mProperties.text;
+        // usr = usr.toUpperCase();
+        // if (rond == "" && usr == "") {
+        //   MessageBox.alert(
+        //     "الرجاء ادخال اسم المستخدم للفرقة الفنية او رقم الجولة	"
+        //   );
+        //   return;
+        // }
+        // let v = this.getView().byId("NameUser").getValue();
+        let m = this.getView().byId("numMeter").getValue();
+        var oTable = that.getView().byId("tableSingleMeter");
+        var oModel = new sap.ui.model.json.JSONModel();
+        oData=[
+          {
+          "number":"2222",
+          "name":"WWWWWWW"
+        }
+        ]
+        oModel.setData(oData);
+        oTable.setModel(oModel,"dataInput");
+      },
+      addSingleMeterTour:function(){
+
+        alert("sss");
+      },
+      addSingleMeterTour: function () {
+        let v = this.getView().byId("singleMeterInTour").getValue();
+        let m = this.getView().byId("NameUser3").getValue();
+        console.log(m);
+        console.log(v);
+      },
       onSearchMeter: function (oEvent) {
         var oflg = 1;
         let lv_oEvent = oEvent.getParameter("id").split("--").pop();

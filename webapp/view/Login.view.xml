@@ -85,8 +85,9 @@
 								text="تسجيل الدخول"
 								press="OnLoginPress"
 								type="Emphasized"
-								class="sapUiTinyMarginBegin"
+								class="sapUiTinyMarginBegin button"
 								icon="sap-icon://visits"
+								font-family="'Noto Sans Arabic', sans-serif"
 							/>
 						</HBox>
 

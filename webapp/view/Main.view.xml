@@ -10,7 +10,8 @@
                </f:SimpleForm> -->
                     <IconTabBar enableTabReordering="true" backgroundDesign="Translucent" expanded="true" id="idIconTabBar" class="sapUiResponsiveContentPadding">
                         <items>
-                            <IconTabFilter text="العدادات الجديدة" icon="sap-icon://repost" iconColor="Positive" id="idTabNewMeter" key="newMeter">
+                            <IconTabFilter text="العدادات الجديدة" icon="sap-icon://business-one" iconColor="Positive"
+                             id="idTabNewMeter" key="newMeter">
                                 <core:Fragment fragmentName="Jepco.ISU.DM.smartmeter.fragment.newMeter" type="XML" />
                             </IconTabFilter>
                             <IconTabFilter text="جميع العدادات " icon="sap-icon://database" iconColor="Negative" id="idTabOtherMeter" key="otherMeter">

@@ -1,34 +1,121 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
-    <VBox  class="sapUiSmallMargin">
+	<l:VerticalLayout class="sapUiContentPadding">
         <Label labelFor="rbg" text="استعلام" />
-        <RadioButtonGroup id="rbg" columns="3" class="sapUiMediumMarginEnd" press="onShowButton">
-            <RadioButton id="RB3-1" text="حسب التاريخ" />
-            <RadioButton id="RB3-2" text="حسب الجوله" />
-            <RadioButton id="RB3-3" text="الجميع" />
+        <RadioButtonGroup id="rbg" columns="3" class="sapUiMediumMarginEnd" select="onShowButton">
+            <RadioButton id="RDB-Date" text="حسب التاريخ" />
+            <RadioButton id="RDB-Tour" text="حسب الجوله" />
+            <RadioButton id="RDB-All" text="الجميع" />
         </RadioButtonGroup>
-		<!-- <Label text="التاريخ من" labelFor="from"/>
-<DatePicker
-			id="from"
-			width="300px"
-			displayFormat="short"
-			change="handleChange"
-			class="sapUiSmallMarginBottom"/>
-		<Label text="الى" labelFor="to"/>
-		<DatePicker
-			id="to"
-			width="300px"
-			displayFormat="short"
-			change="handleChange"
-			class="sapUiSmallMarginBottom"/>  -->
+		<f:SimpleForm id="SimpleFormDate" visible="true" editable="true"
+		layout="ResponsiveGridLayout"  >
+			<Label text="التاريخ من" labelFor="from" />
+			<DatePicker id="from" width="250px" displayFormat="short" />
+			<Label text="الى" labelFor="to" />
+			<DatePicker id="to" width="250px" displayFormat="short"  />
+		</f:SimpleForm>
 
 
+		<f:SimpleForm id="SimpleFormTour" visible="false">
+			<Label text="رقم الجوله" labelFor="inputTour" />
+        <Input id="inputTour" type="Number" placeholder="رقم الجوله" width="250px" /> 
+    </f:SimpleForm>
+	</l:VerticalLayout>
+	<Panel>
+		<FlexBox
+			height="100px"
+			alignItems="Start"
+			justifyContent="End">
+			<Button text="بحث" press="onShowTable" click="handleClick" design="Emphasized" width="100px" height="20px" />
+		</FlexBox>
+	</Panel>
+	<Table id="idTableData" class="sapUiResponsiveMargin" growing="true"  visible="false" 
+	growingThreshold="10" width="auto" >
+		
+		<columns>
+	   
+		   <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+			  <Text text="الجوله" width="" />
+		   </Column>
+		   <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+			  <Text text=" رمز الجوله  " width="" />
+		   </Column>
+			   <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+			  <Text text="اسم الفني" width="" />
+		   </Column>
+		   <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+			  <Text text=" رقم الفايبر " width="" />
+		   </Column>
+		   <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+			  <Text text="عدد العدادات" width="" hAlign="Center" />
+		   </Column>
+			 <Column hAlign="Center" minScreenWidth="tablet" demandPopin="true">
+			  <Text text="مزيد" width="" hAlign="Center" />
+		   </Column>
+		</columns>
 
-			
-			<!-- <Input
-			id="inputNumber"
-			type="Number"s
-			placeholder="رقم الجوله"
-			ariaLabelledBy="InputNumberLabel"
-			width="300px"/> -->
-    </VBox>
+
+		<items>
+			<ColumnListItem>
+			   <cells>
+				  <Text text="555555" />
+				  <Text text="123" />
+				  <Text text="ًوسام عيسى حسن احمد" />
+				  <Text text="353535" />
+				  <Text text="10" />
+				  <Button text="المزيد" press="showPageDetalis"> </Button> 
+			   </cells>
+			</ColumnListItem>
+			<ColumnListItem>
+				<cells>
+				   <Text text="555555" />
+				   <Text text="123" />
+				   <Text text="ًوسام عيسى حسن احمد" />
+				   <Text text="353535" />
+				   <Text text="10" />
+				   <Button text="المزيد"> </Button> 
+				</cells>
+			 </ColumnListItem>
+			 <ColumnListItem>
+				<cells>
+				   <Text text="555555" />
+				   <Text text="123" />
+				   <Text text="ًوسام عيسى حسن احمد" />
+				   <Text text="353535" />
+				   <Text text="10" />
+				   <Button text="المزيد"> </Button> 
+				</cells>
+			 </ColumnListItem>
+			 <ColumnListItem>
+				<cells>
+				   <Text text="555555" />
+				   <Text text="123" />
+				   <Text text="ًوسام عيسى حسن احمد" />
+				   <Text text="353535" />
+				   <Text text="10" />
+				   <Button text="المزيد"> </Button> 
+				</cells>
+			 </ColumnListItem>
+			 <ColumnListItem>
+				<cells>
+				   <Text text="555555" />
+				   <Text text="123" />
+				   <Text text="ًوسام عيسى حسن احمد" />
+				   <Text text="353535" />
+				   <Text text="10" />
+				   <Button text="المزيد"> </Button> 
+				</cells>
+			 </ColumnListItem>
+			 <ColumnListItem>
+				<cells>
+				   <Text text="555555" />
+				   <Text text="123" />
+				   <Text text="ًوسام عيسى حسن احمد" />
+				   <Text text="353535" />
+				   <Text text="10" />
+				   <Button text="المزيد"> </Button> 
+				</cells>
+			 </ColumnListItem>
+		 </items>
+		 
+	 </Table>
 </core:FragmentDefinition>
